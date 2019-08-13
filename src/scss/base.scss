@@ -1,0 +1,225 @@
+@import 'fonts';
+
+$active-color: #212bff;
+$form-color: #b8bed8;
+$error-color: #ff1e38;
+$body-bg: #f6f6f6;
+$bg-color-inactive: #edeeef;
+
+@function url-friendly-color($color) {
+    @return '%23' + str-slice('#{$color}', 2, -1)
+}
+
+@function darker($color, $tone) {
+  $adjust: -16*$tone;
+  @return adjust-color($color, $red: $adjust, $green: $adjust, $blue: $adjust);
+}
+
+body {
+	font-family: 'Montserrat', sans-serif !important;	
+}
+
+h1 {
+	font-size: 42px;
+}
+
+.title {
+	padding: 40px 0;
+	font-weight: 400;
+}
+
+#TabContent {
+	background-color: #fff;
+	padding: 30px;
+}
+
+#TabContent {
+	input {
+		height: calc(1.5em + 1.5rem + 2px);
+		padding: .5rem 1rem;
+	}
+	::placeholder {
+		color: $form-color;
+	}
+	.btn {
+		border-radius: 24px;
+		background-color: $active-color;
+		padding: 12px 50px;	
+	}
+	.tab-pane {
+		border-radius: 0;
+		border-bottom: 0;
+	}
+	.card-header {
+		background-color: transparent;
+		position: relative;
+		padding: 18px;
+	}
+	.card-header a {
+		color: $active-color;
+		font-weight: 400;
+	}
+	.form-control {
+		border-color: #dadef0;
+	}	
+	.form-control:hover {
+		border-color: #c3c9db;
+		cursor: pointer;
+	}
+	.form-control:focus {
+		border-color: #8288a2;
+		box-shadow: none;
+	}
+	.was-validated .form-control:invalid {
+		border-color: $error-color;
+		background: transparent;
+	}
+	.btn:hover {
+		background-color: darker($active-color, 1);
+	}
+	.btn:focus {
+		background-color: darker($active-color, 2);
+		box-shadow: none;
+	}
+	.btn[disabled] {
+		background-color: $bg-color-inactive;
+		color: $form-color;
+		border: none;
+	}
+	.custom-control-label {
+		cursor: pointer;
+	}
+	.custom-radio:hover {
+		color: $active-color;
+	}
+	.custom-radio:hover .custom-control-label::before {
+		border: $active-color solid 1px; 
+	}
+	.custom-radio .custom-control-input:checked~.custom-control-label::before,
+	.custom-radio .custom-control-input:checked~.custom-control-label::after {
+		background-color: #fff; 
+		background-image:  url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{url-friendly-color($active-color)}'/></svg>");
+		border: $active-color solid 1px;
+		border-radius: 50%;
+	}
+	.custom-radio .custom-control-input:focus ~ .custom-control-label::before {
+		box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(255, 255, 255, 0.25); 
+	}
+	.custom-radio:hover .custom-control-input[disabled]+label::before,
+	.custom-radio .custom-control-input[disabled]+label::before{
+		border: 0;
+	}
+	.custom-radio .custom-control-input[disabled]+label {	
+		color: $form-color;
+	}	
+	.form-control[disabled] {
+		border: 0;
+	}
+}
+
+#TabMenu {
+	.nav-link.active, .nav-link:hover {
+		color: $active-color;
+	}
+	.nav-link {
+		padding: 20px 30px;
+		border: 0;
+		color: #8288a2;
+		position: relative;
+		z-index: 1;
+		background-color: transparent;
+	}
+	.nav-item {
+		border-top-left-radius: 8px;
+		border-top-right-radius: 8px;
+		width: 160px;
+		position: relative;
+		border-left: 1px solid #dadbdc;
+	}
+	.activeTab {
+		z-index: 100 !important;
+		border: 0;
+	}
+	.nextTab {
+		margin-left: -28px;	
+	}
+
+}
+#TabMenu {
+		border: 0;
+}
+
+#Ymap {
+	width: 100%; 
+	height: 500px;
+	padding: 30px 0;
+}
+
+#menuSvg {
+	position: absolute;
+    left: 0;
+    top: 0;	
+}
+
+#TabMenu {
+      display:none;
+}
+
+.arrow {
+    position: absolute;
+    right: 15px;
+    top: 20px;
+}
+
+@import "node_modules/bootstrap/scss/bootstrap";
+
+@include media-breakpoint-up(md) {
+	#TabMenu {
+		display: flex;
+	} 
+	#TabContent {
+      .card {
+          border: none;
+      }
+
+       .card .card-header {
+          display:none;
+      }  
+
+       .card .collapse{
+          display:block;
+      }
+	}
+}
+@include media-breakpoint-down(sm){
+	.title {
+		margin: 0;
+		font-size: 32px;
+	}
+	#TabContent {
+		padding: 0;
+	}
+    #TabContent {
+		.tab-pane {
+			display: block !important;
+			opacity: 1;
+		}
+		.custom-radio {
+			margin: 10px 0;
+		}
+    }
+	.container {
+		max-width: unset !important;
+	} 	
+}
+
+@include media-breakpoint-down(xs){
+	.title {
+		text-align: center;
+	}	
+}
+
+
+
+
+
