@@ -1,5 +1,14 @@
 # Greensight form module
-Frontend test task for company 'Greensight'
+Frontend test task for company 'Greensight'.
+
+## Tech stack
+* HTML;
+* JS;
+* Webpack;
+* SASS;
+* Bootstrap;
+* JQuery;
+* Babel.
 
 ## Settings
 To add new points on map, add the correct address into array 'arrAdress':
