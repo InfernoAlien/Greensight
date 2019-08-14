@@ -106,9 +106,6 @@ h1 {
 #TabContent .form-control[disabled] {
   border: 0; }
 
-#TabContent .collapse.show {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.125); }
-
 #TabMenu .nav-link.active, #TabMenu .nav-link:hover {
   color: #212bff; }
 
@@ -7199,6 +7196,8 @@ a.text-dark:hover, a.text-dark:focus {
     opacity: 1; }
   #TabContent .custom-radio {
     margin: 10px 0; }
+  #TabContent .collapse.show {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125); }
   .container {
     max-width: unset !important; }
   #Ymap {
