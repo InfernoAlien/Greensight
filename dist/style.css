@@ -25,9 +25,9 @@ h1 {
   color: #b8bed8; }
 
 #TabContent .btn {
-  border-radius: 24px;
   background-color: #212bff;
-  padding: 12px 50px; }
+  border-radius: 30px;
+  padding: 16px 60px; }
 
 #TabContent .tab-pane {
   border-radius: 0;
@@ -36,11 +36,19 @@ h1 {
 #TabContent .card-header {
   background-color: transparent;
   position: relative;
-  padding: 18px; }
+  padding: 18px;
+  cursor: pointer; }
 
 #TabContent .card-header a {
-  color: #212bff;
+  color: #b8bed8;
   font-weight: 400; }
+
+.card-header .no-touch #TabContent:hover,
+.card-header .touch #TabContent:active {
+  color: #212bff; }
+
+#TabContent .active_trig a {
+  color: #212bff; }
 
 #TabContent .form-control {
   border-color: #dadef0; }
@@ -97,6 +105,9 @@ h1 {
 
 #TabContent .form-control[disabled] {
   border: 0; }
+
+#TabContent .collapse.show {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125); }
 
 #TabMenu .nav-link.active, #TabMenu .nav-link:hover {
   color: #212bff; }
@@ -7181,14 +7192,17 @@ a.text-dark:hover, a.text-dark:focus {
     margin: 0;
     font-size: 32px; }
   #TabContent {
-    padding: 0; }
+    padding: 0;
+    margin-bottom: 20px; }
   #TabContent .tab-pane {
     display: block !important;
     opacity: 1; }
   #TabContent .custom-radio {
     margin: 10px 0; }
   .container {
-    max-width: unset !important; } }
+    max-width: unset !important; }
+  #Ymap {
+    height: 400px; } }
 
 @media (max-width: 575.98px) {
   .title {

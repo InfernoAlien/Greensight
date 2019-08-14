@@ -41,12 +41,15 @@ jQuery(function() {
 	//Функция анимации стрелок при открытии/закрытии вкладок мобильного меню (<768px)
 	jQuery('.card-header').on("click", function(e){
 		if(jQuery(this).hasClass('active_trig')) {
-			jQuery(this).children('.arrow').children().attr('d', 'M 7,7 L 12,12 L 12,12 L 17,7');	
+			jQuery(this).children('.arrow').children().attr('d', 'M 7,7 L 12,12 L 12,12 L 17,7');
+			jQuery(this).children('.arrow').children().attr('stroke', '#b8bed8');			
 			jQuery(this).removeClass('active_trig');
 		}
 		else {
 			jQuery('.arrow').children().attr('d', 'M 7,7 L 12,12 L 12,12 L 17,7');
 			jQuery('.card-header').removeClass('active_trig');
+			jQuery('.arrow').children().attr('stroke', '#b8bed8');
+			jQuery(this).children('.arrow').children().attr('stroke', '#212bff');
 			jQuery(this).children('.arrow').children().attr('d', 'M 8,15 L 13,10 L 13,10 L 18,15');
 			jQuery(this).addClass('active_trig');			
 		}
@@ -145,7 +148,8 @@ function init() {
 					// её "ножки" (точки привязки).
 					iconImageOffset: [-5, -38]
 				});
-				if (window.matchMedia('(max-width: 768px)').matches) {
+				// Отключение скролла карты для тач-устройств.
+				if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 					myMap.behaviors.disable('drag');
 				}
 				myMap.geoObjects.add(myPlacemark);
