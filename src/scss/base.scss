@@ -123,9 +123,6 @@ h1 {
 	.form-control[disabled] {
 		border: 0;
 	}
-	.collapse.show {
-		border-bottom: 1px solid rgba(0, 0, 0, 0.125);
-	}
 }
 
 #TabMenu {
@@ -218,6 +215,9 @@ h1 {
 		}
 		.custom-radio {
 			margin: 10px 0;
+		}
+		.collapse.show {
+			border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 		}
     }
 	.container {
