@@ -1,2 +1,2 @@
-# Greensight module form
+# Greensight form module
 Frontend test task for Greensight
