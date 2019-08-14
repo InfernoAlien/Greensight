@@ -1,6 +1,9 @@
 # Greensight form module
 Frontend test task for company 'Greensight'.
 
+## Demo
+Link to demo: https://infernoalien.github.io/Greensight/
+
 ## Tech stack
 * HTML;
 * JS;
